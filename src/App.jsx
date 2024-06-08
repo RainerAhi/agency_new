@@ -6,6 +6,7 @@ import { Section1 } from "./Sections/Section1";
 import { SectionFAQ } from "./Sections/SectionFAQ";
 import { SectionFooter } from "./Sections/SectionFooter";
 import { motion, AnimatePresence } from "framer-motion";
+import { Section2 } from "./Sections/Section2";
 
 const LoadingScreen = () => {
   const { progress, active } = useProgress();
@@ -70,6 +71,7 @@ function App() {
         </div>
 
         <Section1 />
+        <Section2 />
 
       </>
   );

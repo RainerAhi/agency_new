@@ -74,7 +74,7 @@ section {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 1vw;
-  line-height: 125%;
+  line-height: 135%;
 }
 
 .button-text {
@@ -191,6 +191,7 @@ html.lenis {
   justify-content: center;
 }
 
+
 .one-texts {
   display: flex;
   flex-direction: column;
@@ -269,7 +270,7 @@ html.lenis {
 .transparent-button {
   height: 2.5vw;
   width: fit-content;
-  background-color:#fffefe25;
+  background-color:#fffefe10;
   border-radius: 150px;
   padding: 0 1vw;
   display: flex;
