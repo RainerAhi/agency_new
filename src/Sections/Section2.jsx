@@ -7,7 +7,7 @@ export const Section2 = () => {
 
     return (
       <>
-        <section className="one">
+        <section className="two">
         </section>
       </>
     )

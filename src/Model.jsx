@@ -11,7 +11,7 @@ export default function Model({ ...props }) {
     <>
       <color attach="background" args={['#1e1e21']} />
       <group {...props} dispose={null}>
-        <scene scale={ 0.5 } name="Scene">
+        <scene scale={ 0.4 } name="Scene">
           <mesh
             name="chips"
             geometry={nodes.chips.geometry}
