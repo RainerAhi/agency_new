@@ -136,7 +136,7 @@ function App() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className="solid-button" 
+              className="solid-button navigation-bar-button" 
             >
               <h1 className="button-text" >Broneeri Kõne</h1>
             </motion.button>
