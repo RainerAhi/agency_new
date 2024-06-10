@@ -8,6 +8,8 @@ export const Section1 = () => {
     return (
       <>
         <section className="one">
+          <div className="background-element-one" />
+          <div className="background-element-grid" />
           <div className="one-content" >
             <div className="one-content-left" >
               {/* <motion.button
@@ -37,7 +39,7 @@ export const Section1 = () => {
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="transparent-button" 
                 >
-                  <h1 className="button-text" >Projektid</h1>
+                  <h1 className="button-text" >Showreel</h1>
                 </motion.button>
               </div>
             </div>

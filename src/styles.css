@@ -171,9 +171,41 @@ html.lenis {
   cursor: pointer;
   z-index: 20;
   position: relative;
+  transition: 0.25s ease;
+}
+
+.navigation-bar-text:hover {
+  color: #fffefe;
 }
 
 /* SECTION ONE */
+
+.background-element-one {
+  width: 30vh;
+  height: 160vh;
+  border-radius: 100%;
+  background-color: #fffefe;
+  filter: blur(100px);
+  opacity: 0.17;
+  position: absolute;
+  left: 170vh;
+  margin-top: -70vh;
+  z-index: 0;
+  transform: rotate(40deg);
+}
+
+.background-element-grid {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30vw;
+  height: 50vh;
+  background-image: 
+  linear-gradient(to right, rgba(255, 254, 254, 0.01) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(255, 254, 254, 0.01) 1px, transparent 1px);
+  background-size: 50px 50px; /* Adjust this value to change the grid size */
+  z-index: 11;
+}
 
 .one {
   background-color: #010001;
@@ -182,6 +214,7 @@ html.lenis {
   flex-direction: column;
   padding: 0 15%;
 }
+
 
 .one-content {
   width: 100%;
