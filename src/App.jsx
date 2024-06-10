@@ -96,11 +96,30 @@ function App() {
     }
   };
 
+  const [navScrolled, setNavScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+        const scrollThreshold = 10;
+        if (window.scrollY > scrollThreshold) {
+            setNavScrolled(true);
+        } else {
+            setNavScrolled(false);
+        }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+        window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
       <>
         <LoadingScreen />
 
-        <div className="navigation">
+        <div className={`navigation ${navScrolled ? "scrolled" : ""}`}>
           <div className="navigation-left">
             <h1 className="logo-text" >Peak Creations</h1>
           </div>

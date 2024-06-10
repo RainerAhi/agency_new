@@ -16,7 +16,16 @@ body,
 }
 
 ::-webkit-scrollbar {
-  display: auto;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f1f7feb5;
+  height: 10vh;
+}
+/* TRACK */
+::-webkit-scrollbar-track {
+  background-color: #010001;
 }
 
 section {
@@ -41,16 +50,6 @@ section {
 
 .mainsections {
   height: 300vh;
-}
-
-.htmlScreen iframe
-{
-    width: 1550px;
-    height: 1040px;
-    border: none;
-    border-radius: 20px;
-    background: #000000;
-    pointer-events: all;
 }
 
 /* TEXTS */
@@ -142,6 +141,13 @@ html.lenis {
   top: 0;
   position: fixed;
   z-index: 10;
+  border-bottom: 1px transparent solid;
+  transition: height 0.3s ease;
+}
+
+.navigation.scrolled {
+  height: 8vh; /* Adjust to your desired height */
+  border-bottom: 1px #fffefe35 solid;
 }
 
 .logo-text {
@@ -191,6 +197,10 @@ html.lenis {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.one-content-right {
+  cursor: pointer;
 }
 
 
