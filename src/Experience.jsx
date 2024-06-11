@@ -31,7 +31,6 @@ export default function Experience() {
 
   return (
     <>
-      <SoftShadows intensity={ 20 } />
       <Suspense fallback >
         <Float rotationIntensity={ 2 } floatIntensity={ 1 } speed={ 2 } >
           <Model rotation-x={ Math.PI * 0.03 } position={ [ 0, isMobile ? -0.5 : -1.25, 0 ] } scale={ 0.5 } />

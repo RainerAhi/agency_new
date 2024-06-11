@@ -16,7 +16,7 @@ body,
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -137,17 +137,17 @@ html.lenis {
   align-items: center;
   bottom: 0;
   background-color: transparent;
-  backdrop-filter: blur(10px);
   top: 0;
   position: fixed;
   z-index: 10;
   border-bottom: 1px transparent solid;
-  transition: height 0.3s ease;
+  transition: height 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .navigation.scrolled {
   height: 8vh; /* Adjust to your desired height */
   border-bottom: 1px #fffefe35 solid;
+  backdrop-filter: blur(10px);
 }
 
 .logo-text {
@@ -206,10 +206,10 @@ html.lenis {
   width: 30vw;
   height: 50vh;
   background-image: 
-  linear-gradient(to right, rgba(255, 254, 254, 0.02) 1px, transparent 1px),
-  linear-gradient(to bottom, rgba(255, 254, 254, 0.02) 1px, transparent 1px);
+  linear-gradient(to right, rgba(255, 254, 254, 0.0175) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(255, 254, 254, 0.0175) 1px, transparent 1px);
   background-size: 50px 50px; /* Adjust this value to change the grid size */
-  z-index: 0;
+  z-index: 1;
 }
 
 .one {
@@ -286,8 +286,8 @@ html.lenis {
   position: relative;
   z-index: 1;
   border-radius: 150px;
-  background: linear-gradient(to right,#7a5a8d, #543e62, #c8aed8, #d6d6e6 );
-  cursor: pointer;
+  background: linear-gradient(to right,#7a5a8d, #543e62, #c8aed8, #d6d6e6,#7a5a8d );
+  cursor: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -315,6 +315,12 @@ html.lenis {
   justify-content: center;
   cursor: pointer;
   border: none;
+  gap: 0.25vw;
+}
+
+.fa-chevron-right {
+  font-size: 0.75vw;
+  transition: 0.5s ease;
 }
 
 .transparent-button {
@@ -329,6 +335,11 @@ html.lenis {
   cursor: pointer;
   border: none;
   color: #fffefe;
+  gap: 0.25vw;
+}
+
+.transparent-button:hover .fa-location-arrow {
+  transform: rotate(45deg);
 }
 
 /* SECTION TWO */
@@ -374,6 +385,16 @@ html.lenis {
 /* SECTION SIX */
 
 .six {
+  background-color: #010001;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15%;
+}
+
+/* SECTION SEVEN */
+
+.seven {
   background-color: #010001;
   height: 100vh;
   display: flex;

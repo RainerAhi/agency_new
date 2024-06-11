@@ -9,6 +9,7 @@ import { Section3 } from "./Sections/Section3";
 import { Section4 } from "./Sections/Section4";
 import { Section5 } from "./Sections/Section5";
 import { Section6 } from "./Sections/Section6";
+import { Section7 } from "./Sections/Section7";
 
 const LoadingScreen = () => {
   const { progress, active } = useProgress();
@@ -51,6 +52,7 @@ function App() {
   const section4Ref = useRef(null);
   const section5Ref = useRef(null);
   const section6Ref = useRef(null);
+  const section7Ref = useRef(null);
 
   const [currentSection, setCurrentSection] = useState(null);
 
@@ -139,6 +141,7 @@ function App() {
               className="solid-button navigation-bar-button" 
             >
               <h1 className="button-text" >Broneeri Kõne</h1>
+              <i class="fa-solid fa-chevron-right"></i>
             </motion.button>
           </div>
         </div>
@@ -146,20 +149,21 @@ function App() {
         <div ref={section1Ref} data-section="section1">
           <Section1 />
         </div>
+        <Section2 />
         <div ref={section2Ref} data-section="section2">
-          <Section2 />
-        </div>
-        <div ref={section3Ref} data-section="section3">
           <Section3 />
         </div>
-        <div ref={section4Ref} data-section="section4">
+        <div ref={section3Ref} data-section="section3">
           <Section4 />
         </div>
-        <div ref={section5Ref} data-section="section5">
+        <div ref={section4Ref} data-section="section4">
           <Section5 />
         </div>
-        <div ref={section6Ref} data-section="section6">
+        <div ref={section5Ref} data-section="section5">
           <Section6 />
+        </div>
+        <div ref={section6Ref} data-section="section6">
+          <Section7 />
         </div>
 
       </>
