@@ -3,11 +3,11 @@ import CanvasContainer from "../CanvasContainer";
 import { Section6 } from "./Section6";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const Section2 = () => {
+export const SectionMeist = () => {
 
     return (
       <>
-        <section className="two">
+        <section className="meist">
         </section>
       </>
     )
