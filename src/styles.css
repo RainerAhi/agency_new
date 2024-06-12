@@ -99,30 +99,6 @@ section {
   line-height: 100%;
 }
 
-.black {
-  color: #111111;
-}
-
-.white {
-  color: #fffefe;
-}
-
-.white-shade {
-  color: #fcfdffef;
-}
-
-.white-gradient {
-  background: linear-gradient(to right bottom, #fff 30%, hsla(0, 0%, 100%, .5));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: unset;
-}
-
-.grey {
-  color: #f1f7feb5;
-}
-
 /* SMOOTH SCROLLING */
 
 
@@ -158,16 +134,10 @@ html.lenis {
   bottom: 0;
   background-color: transparent;
   top: 0;
-  position: fixed;
+  position: absolute;
   z-index: 10;
   border-bottom: 1px transparent solid;
   transition: height 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-.navigation.scrolled {
-  height: 8vh; /* Adjust to your desired height */
-  border-bottom: 1px #fffefe35 solid;
-  backdrop-filter: blur(10px);
 }
 
 .logo-text {
@@ -362,9 +332,9 @@ html.lenis {
   transform: rotate(45deg);
 }
 
-/* SECTION EELISED */
+/* SECTION TEENUSED */
 
-.eelised {
+.teenused {
   background-color: #010001;
   height: 100vh;
   display: flex;
@@ -710,6 +680,30 @@ html.lenis {
 
 }
 
+/* COLORS */
 
 
+.black {
+  color: #111111;
+}
+
+.white {
+  color: #fffefe;
+}
+
+.white-shade {
+  color: #fcfdffef;
+}
+
+.white-gradient {
+  background: linear-gradient(to right bottom, #fff 30%, hsla(0, 0%, 100%, .5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: unset;
+}
+
+.grey {
+  color: #f1f7feb5;
+}
 

@@ -27,7 +27,7 @@ export const SectionKodu = () => {
                   className="solid-button" 
                 >
                   <h1 className="button-text" >Broneeri Kõne</h1>
-                  <i class="fa-solid fa-chevron-right"></i>
+                  <i class="fa-solid fa-chevron-right black"></i>
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.1 }}

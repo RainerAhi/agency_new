@@ -4,11 +4,11 @@ import Lenis from "@studio-freight/lenis";
 import { useProgress } from "@react-three/drei";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionKodu } from "./Sections/SectionKodu";
-import { SectionEelised } from "./Sections/SectionEelised";
 import { SectionProjektid } from "./Sections/SectionProjektid";
 import { SectionMeist } from "./Sections/SectionMeist";
 import { SectionHinnakiri } from "./Sections/SectionHinnakiri";
 import { SectionKüsimused } from "./Sections/SectionKüsimused";
+import { SectionTeenused } from "./Sections/SectionTeenused";
 
 const LoadingScreen = () => {
   const { progress, active } = useProgress();
@@ -46,47 +46,11 @@ function App() {
   requestAnimationFrame(raf);
 
   const sectionKodu = useRef(null);
-  const sectionEelised = useRef(null);
+  const sectionTeenused = useRef(null);
   const sectionProjektid = useRef(null);
   const sectionMeist = useRef(null);
   const sectionHinnakiri = useRef(null);
   const sectionKüsimused = useRef(null);
-
-  const [currentSection, setCurrentSection] = useState(null);
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5
-    };
-
-    const callback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setCurrentSection(entry.target.dataset.section);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    if (sectionKodu.current) observer.observe(sectionKodu.current);
-    if (sectionEelised.current) observer.observe(sectionEelised.current);
-    if (sectionProjektid.current) observer.observe(sectionProjektid.current);
-    if (sectionMeist.current) observer.observe(sectionMeist.current);
-    if (sectionHinnakiri.current) observer.observe(sectionHinnakiri.current);
-    if (sectionKüsimused.current) observer.observe(sectionKüsimused.current);
-
-    return () => {
-      if (sectionKodu.current) observer.unobserve(sectionKodu.current);
-      if (sectionEelised.current) observer.unobserve(sectionEelised.current);
-      if (sectionProjektid.current) observer.unobserve(sectionProjektid.current);
-      if (sectionMeist.current) observer.unobserve(sectionMeist.current);
-      if (sectionHinnakiri.current) observer.unobserve(sectionHinnakiri.current);
-      if (sectionKüsimused.current) observer.unobserve(sectionKüsimused.current);
-    };
-  }, []);
 
   const scrollToSection = (ref) => {
     if (ref.current) {
@@ -96,40 +60,21 @@ function App() {
     }
   };
 
-  const [navScrolled, setNavScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-        const scrollThreshold = 10;
-        if (window.scrollY > scrollThreshold) {
-            setNavScrolled(true);
-        } else {
-            setNavScrolled(false);
-        }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-        window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
       <>
         <LoadingScreen />
 
-        <div className={`navigation ${navScrolled ? "scrolled" : ""}`}>
+        <div className="navigation">
           <div className="navigation-left">
             <h1 className="logo-text" >Peak Creations</h1>
           </div>
           <div className="navigation-center">
-            <h1 className={`navigation-bar-text ${currentSection === 'sectionKodu' ? 'white' : 'grey'}`} onClick={() => scrollToSection(sectionKodu)} >Kodu</h1>
-            <h1 className={`navigation-bar-text ${currentSection === 'sectionEelised' ? 'white' : 'grey'}`} onClick={() => scrollToSection(sectionEelised)} >Eelised</h1>
-            <h1 className={`navigation-bar-text ${currentSection === 'sectionProjektid' ? 'white' : 'grey'}`} onClick={() => scrollToSection(sectionProjektid)} >Projektid</h1>
-            <h1 className={`navigation-bar-text ${currentSection === 'sectionMeist' ? 'white' : 'grey'}`} onClick={() => scrollToSection(sectionMeist)} >Meist</h1>
-            <h1 className={`navigation-bar-text ${currentSection === 'sectionHinnakiri' ? 'white' : 'grey'}`} onClick={() => scrollToSection(sectionHinnakiri)} >Hinnakiri</h1>
-            <h1 className={`navigation-bar-text ${currentSection === 'sectionKüsimused' ? 'white' : 'grey'}`} onClick={() => scrollToSection(sectionKüsimused)} >Küsimused</h1>
+            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionKodu)} >Kodu</h1>
+            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionTeenused)} >Teenused</h1>
+            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionProjektid)} >Projektid</h1>
+            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionMeist)} >Meist</h1>
+            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionHinnakiri)} >Hinnakiri</h1>
+            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionKüsimused)} >Küsimused</h1>
           </div>
           <div className="navigation-right">
             <motion.button
@@ -139,7 +84,7 @@ function App() {
               className="solid-button navigation-bar-button" 
             >
               <h1 className="button-text" >Broneeri Kõne</h1>
-              <i class="fa-solid fa-chevron-right"></i>
+              <i class="fa-solid fa-chevron-right black"></i>
             </motion.button>
           </div>
         </div>
@@ -147,8 +92,8 @@ function App() {
         <div ref={sectionKodu} data-section="sectionKodu">
           <SectionKodu />
         </div>
-        <div ref={sectionEelised} data-section="sectionEelised">
-          <SectionEelised />
+        <div ref={sectionTeenused} data-section="sectionTeenused">
+          <SectionTeenused />
         </div>
         <div ref={sectionProjektid} data-section="sectionProjektid">
           <SectionProjektid />
