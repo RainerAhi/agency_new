@@ -32,11 +32,11 @@ export default function Experience() {
   return (
     <>
       <Suspense fallback >
-        <Float rotationIntensity={ 2 } floatIntensity={ 1 } speed={ 2 } >
+        <Float rotationIntensity={ 0.5 } floatIntensity={ 2 } speed={ 2 } >
           <Model rotation-x={ Math.PI * 0.03 } position={ [ 0, isMobile ? -0.5 : -1.25, 0 ] } scale={ 0.5 } />
         </Float>
       </Suspense>  
-      <OrbitControls enableZoom={ false } enableRotate={ true } enablePan={ false } />
+      <OrbitControls maxPolarAngle={ Math.PI / 2 } enableZoom={ false } enableRotate={ true } enablePan={ false } />
       </>
   )
 }

@@ -16,7 +16,7 @@ const LoadingScreen = () => {
   return (
     <div className={`loading-screen ${active ? "" : "loading-screen--hidden"}`}>
       <div className="loading-screen__container">
-        <h1 className="headline white-gradient">Peak Creations</h1>
+        <h1 className="headline black">Peak Creations</h1>
         <div className="progress__container">
           <div className="progress__bar" style={{ width: `${progress}%` }}></div>
         </div>
@@ -69,22 +69,23 @@ function App() {
             <h1 className="logo-text" >Peak Creations</h1>
           </div>
           <div className="navigation-center">
-            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionKodu)} >Kodu</h1>
-            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionTeenused)} >Teenused</h1>
-            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionProjektid)} >Projektid</h1>
-            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionMeist)} >Meist</h1>
-            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionHinnakiri)} >Hinnakiri</h1>
-            <h1 className="navigation-bar-text grey" onClick={() => scrollToSection(sectionKüsimused)} >Küsimused</h1>
+            <h1 className="navigation-bar-text black" onClick={() => scrollToSection(sectionKodu)} >Kodu</h1>
+            <h1 className="navigation-bar-text black" onClick={() => scrollToSection(sectionTeenused)} >Teenused</h1>
+            <h1 className="navigation-bar-text black" onClick={() => scrollToSection(sectionProjektid)} >Projektid</h1>
+            <h1 className="navigation-bar-text black" onClick={() => scrollToSection(sectionMeist)} >Meist</h1>
+            <h1 className="navigation-bar-text black" onClick={() => scrollToSection(sectionHinnakiri)} >Hinnakiri</h1>
+            <h1 className="navigation-bar-text black" onClick={() => scrollToSection(sectionKüsimused)} >Küsimused</h1>
           </div>
           <div className="navigation-right">
+            {/* <div className="gradient-box"></div> */}
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className="solid-button navigation-bar-button" 
+              className="solid-button" 
             >
-              <h1 className="button-text" >Broneeri Kõne</h1>
-              <i class="fa-solid fa-chevron-right black"></i>
+              <h1 className="button-text white" >Broneeri Kõne</h1>
+              <i class="fa-solid fa-chevron-right white"></i>
             </motion.button>
           </div>
         </div>
